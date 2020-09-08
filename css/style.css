@@ -10,6 +10,9 @@ body {
 .in_bl {
   display: inline-block;
 }
+/* .h_50 {
+  height: 50%;
+} */
 .h_70 {
   height: 70px;
 }
@@ -18,6 +21,9 @@ body {
 }
 .color_grey {
   color: #B1B1B1;
+}
+.none {
+  display:none;
 }
 /* wrapper di sfondo */
 .wrapper {
@@ -53,29 +59,19 @@ body {
 }
 /* Profilo */
 .profile {
-  line-height: 60px;
-}
-.profile::after {
-  content:"";
-  display: block;
-  clear:both;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .personal-image {
   height: 100%;
-  width: 30%;
-  float: left;
-  position: relative;
 }
 .personal-image img {
-  height: 80%;
+  height: 100%;
   border-radius: 50px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding-left: 5px;
+  padding: 5px;
 }
 .icons {
-  float:right;
 }
 .icons i {
   padding: 0 5px;
@@ -89,13 +85,13 @@ body {
   width: 100%;
   background-color: #8EDAFC;
   padding: 15px;
+  display: flex;
+  align-items: center;
 }
 .bell {
   color: #8EDAFC;
   background-color: #fff;
-  float: left;
   border-radius: 50%;
-  vertical-align: center;
 }
 .bell i {
   font-size: 18px;
@@ -150,23 +146,84 @@ body {
   font-size: 14px;
 }
 /* /Cerca */
-
+/* Singole chat */
 .chat-list {
-  height: calc(100% - 150px);
+  height: calc(100% - 180px);
   width: 100%;
-  background-color: green;
+  background-color: #fff;
+  overflow: auto;
 }
+.resume {
+  list-style: none;
+}
+li.person {
+  width: 100%;
+  padding: 3px 5px;
+  display: flex;
+  align-items: center;
+}
+.person img {
+  height: 100%;
+}
+.person.personal-image {
+  padding-right: 5px;
+}
+.small-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+.small-wrapper p {
+  font-size: 14px;
+  padding-top: 3px;
+}
+.time {
+margin-left:auto;
+}
+/* /Singole chat */
 /* /Blocco di sx */
 
 /* Blocco di destra */
 .col-right {
   width: 60%;
   height: 100%;
-  background-color: red;
 }
+/* Info chat in corso: nome, img, accesso */
+.col-right .profile .small-wrapper {
+  align-items: center;
+}
+.col-right .profile .small-wrapper .icons {
+  font-size: 20px;
+}
+/* /Info chat in corso: nome, img, accesso */
+
+/* Contenuto chat in corso: nome, img, accesso */
 .single-chat {
-  height: calc(100% - 120px);
+  height: calc(100% - 140px);
+  background-image: url(../img/mine.jpg);
+  background-repeat: repeat;
 }
+
+/* /Contenuto chat in corso: nome, img, accesso */
+/* Inserimento testo */
 .text {
-  background-color: brown;
+  background-color: #E5DDD5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
+.insert_text {
+  width: 80%;
+  height: 70%;
+}
+.insert_text input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+.text i {
+  font-size: 24px;
+}
+/* /Inserimento testo */
