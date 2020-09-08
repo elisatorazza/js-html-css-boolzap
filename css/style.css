@@ -4,11 +4,17 @@
   margin: 0;
   padding: 0;
 }
+.in_bl {
+  display: inline-block;
+}
 .h_60 {
   height: 60px;
 }
 .lg_grey {
   background-color: #D8DBD5;
+}
+.color_grey {
+  color: #B1B1B1;
 }
 /* wrapper di sfondo */
 .wrapper {
@@ -42,10 +48,38 @@
   height: 100%;
   background-color: blue;
 }
+/* Profilo */
 .profile {
-  width: 100%;
-  background-color: pink;
+  background-color: #D8DBD5;
+  line-height: 60px;
 }
+.profile::after {
+  content:"";
+  display: block;
+  clear:both;
+}
+.personal-image {
+  height: 100%;
+  width: 30%;
+  float: left;
+  position: relative;
+}
+.personal-image img{
+  height: 80%;
+  border-radius: 50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 5px;
+}
+.icons {
+  float:right;
+}
+.icons i {
+  padding: 0 5px;
+}
+
+/* /Profilo */
 .notice {
   width: 100%;
   background-color: yellow;
