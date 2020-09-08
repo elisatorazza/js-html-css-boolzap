@@ -4,14 +4,17 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: 'Roboto', sans-serif;
+}
 .in_bl {
   display: inline-block;
 }
-.h_60 {
-  height: 60px;
+.h_70 {
+  height: 70px;
 }
 .lg_grey {
-  background-color: #D8DBD5;
+  background-color: #EAEAEA;
 }
 .color_grey {
   color: #B1B1B1;
@@ -44,13 +47,12 @@
 }
 /* Blocco di sx */
 .col-left {
-  width: 30%;
+  width: 40%;
   height: 100%;
   background-color: blue;
 }
 /* Profilo */
 .profile {
-  background-color: #D8DBD5;
   line-height: 60px;
 }
 .profile::after {
@@ -64,7 +66,7 @@
   float: left;
   position: relative;
 }
-.personal-image img{
+.personal-image img {
   height: 80%;
   border-radius: 50px;
   position: absolute;
@@ -78,17 +80,77 @@
 .icons i {
   padding: 0 5px;
 }
-
+.icons i:last-child {
+  padding-right: 20px;
+}
 /* /Profilo */
+/* Notifiche */
 .notice {
   width: 100%;
-  background-color: yellow;
+  background-color: #8EDAFC;
+  padding: 15px;
 }
+.bell {
+  color: #8EDAFC;
+  background-color: #fff;
+  float: left;
+  border-radius: 50%;
+  vertical-align: center;
+}
+.bell i {
+  font-size: 18px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  line-height: 45px;
+  text-align: center;
+}
+.active {
+  float: left;
+  padding-left: 5px;
+}
+.active h4 {
+  font-size: 16px;
+}
+.active p {
+  font-size: 14px;
+  text-decoration: underline;
+  color: #A9A9A9;
+}
+/* /Notifiche */
+/* Cerca */
 .search {
-  height: 30px;
+  height: 40px;
   width: 100%;
-  background-color: orange;
+  background-color: #E5DDD5;
+  position: relative;
 }
+.bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 75%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+.bar i {
+  width: 25%;
+  color: #A9A9A9;
+  text-align: center;
+  line-height: 30px;
+  border-right: 1px solid #A9A9A9;
+}
+.bar p {
+  color: #A9A9A9;
+  width: 75%;
+  padding-left: 10px;
+  font-size: 14px;
+}
+/* /Cerca */
+
 .chat-list {
   height: calc(100% - 150px);
   width: 100%;
@@ -98,7 +160,7 @@
 
 /* Blocco di destra */
 .col-right {
-  width: 70%;
+  width: 60%;
   height: 100%;
   background-color: red;
 }
