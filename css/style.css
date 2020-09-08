@@ -1,10 +1,17 @@
+/* MIX */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-.wrapper {
+.h_60 {
+  height: 60px;
+}
+.lg_grey {
   background-color: #D8DBD5;
+}
+/* wrapper di sfondo */
+.wrapper {
   height: 100vh;
   width: 100%;
 }
@@ -12,7 +19,58 @@
   content: "";
   border-top: 100px solid #009688;
   width: 100%;
-  position: fixed;
+  display: block;
   top: 0;
   left: 0;
+}
+/* /wrapper di sfondo */
+
+/* Div contenitore chat */
+.container {
+  height: 95vh;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  display: flex;
+}
+/* Blocco di sx */
+.col-left {
+  width: 30%;
+  height: 100%;
+  background-color: blue;
+}
+.profile {
+  width: 100%;
+  background-color: pink;
+}
+.notice {
+  width: 100%;
+  background-color: yellow;
+}
+.search {
+  height: 30px;
+  width: 100%;
+  background-color: orange;
+}
+.chat-list {
+  height: calc(100% - 150px);
+  width: 100%;
+  background-color: green;
+}
+/* /Blocco di sx */
+
+/* Blocco di destra */
+.col-right {
+  width: 70%;
+  height: 100%;
+  background-color: red;
+}
+.single-chat {
+  height: calc(100% - 120px);
+}
+.text {
+  background-color: brown;
 }
