@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  background-color: #D8DBD5;
+  height: 100vh;
+  width: 100%;
+}
+.wrapper::before {
+  content: "";
+  border-top: 100px solid #009688;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
