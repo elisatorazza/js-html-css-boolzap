@@ -10,9 +10,6 @@ body {
 .in_bl {
   display: inline-block;
 }
-/* .h_50 {
-  height: 50%;
-} */
 .h_70 {
   height: 70px;
 }
@@ -24,6 +21,9 @@ body {
 }
 .none {
   display:none;
+}
+.radius {
+  border-radius: 10px;
 }
 /* wrapper di sfondo */
 .wrapper {
@@ -51,7 +51,7 @@ body {
   background-color: #FFF;
   display: flex;
 }
-/* Blocco di sx */
+/* Colonna di sx */
 .col-left {
   width: 40%;
   height: 100%;
@@ -116,42 +116,34 @@ body {
 /* /Notifiche */
 /* Cerca */
 .search {
-  height: 40px;
-  width: 100%;
+  height: 50px;
   background-color: #E5DDD5;
-  position: relative;
-}
-.bar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 95%;
-  height: 75%;
-  background-color: #fff;
   display: flex;
   align-items: center;
+  padding: 10px;
 }
-.bar i {
-  width: 25%;
-  color: #A9A9A9;
+.search input {
+  width: 100%;
+  height: 100%;
+  padding-left: 5px;
+  border:none;
+  border-left: 1px solid #E5DDD5;
+}
+.search-label {
+  width: 100px;
+  display: inline-block;
+  height: 100%;
   text-align: center;
   line-height: 30px;
-  border-right: 1px solid #A9A9A9;
-}
-.bar p {
-  color: #A9A9A9;
-  width: 75%;
-  padding-left: 10px;
-  font-size: 14px;
+  background-color: #fff;
 }
 /* /Cerca */
 /* Singole chat */
 .chat-list {
-  height: calc(100% - 180px);
+  height: calc(100% - 190px);
   width: 100%;
   background-color: #fff;
-  overflow: auto;
+  overflow-y: auto;
 }
 .resume {
   list-style: none;
@@ -182,9 +174,9 @@ li.person {
 margin-left:auto;
 }
 /* /Singole chat */
-/* /Blocco di sx */
+/* /Colonna di sx */
 
-/* Blocco di destra */
+/* Colonna di destra */
 .col-right {
   width: 60%;
   height: 100%;
@@ -202,9 +194,40 @@ margin-left:auto;
 .single-chat {
   height: calc(100% - 140px);
   background-image: url(../img/mine.jpg);
-  background-repeat: repeat;
+  overflow-y: scroll;
+  padding: 50px;
 }
-
+.chat-wrapper {
+  margin: 10px 0;
+}
+.my-message {
+  background-color: #fff;
+  max-width: 40%;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+}
+.message-time {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+}
+.chat-wrapper.sent {
+  display:flex;
+  justify-content: flex-end;
+}
+.chat-wrapper.sent {
+  justify-content: flex-end;
+}
+.chat-wrapper.sent .my-message{
+  background-color: #d5f9ba;
+}
+.my-message .message-text {
+    padding: 15px;
+}
+.my-message .message-time p {
+  font-size: 12px;
+}
 /* /Contenuto chat in corso: nome, img, accesso */
 /* Inserimento testo */
 .text {
@@ -227,3 +250,7 @@ margin-left:auto;
   font-size: 24px;
 }
 /* /Inserimento testo */
+.microphone {
+  cursor: pointer;
+}
+/* /Colonna destra */

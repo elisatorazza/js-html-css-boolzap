@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <!-- Link al file css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Link a jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
   </head>
   <body>
     <!-- Wrapper con sfondo -->
@@ -42,10 +44,10 @@
           <!-- /Notifiche -->
           <!-- Cerca -->
           <div class="search">
-            <div class="bar">
-              <i class="fas fa-search"></i>
-              <p>Cerca o inizia una nuova chat</p>
-            </div>
+            <label class="search-label" for="search">
+              <i class="fas fa-search color_grey"></i>
+            </label>
+            <input type="text" id="search" name="search" placeholder="Cerca o inizia una nuova chat">
           </div>
           <!-- /Cerca -->
           <!-- Chat -->
@@ -255,7 +257,17 @@
           <!-- /Info chat in corso -->
           <!-- Contenuto chat in corso-->
           <div class="single-chat">
-
+            <div class="chat-wrapper sent">
+              <div class="my-message radius">
+                <div class="message-text">
+                  <p>Ciao come va?</p>
+                  <i class="fas fa-angle-down color_grey none"></i>
+                </div>
+                <div class="message-time">
+                  <p class="color_grey">17.29</p>
+                </div>
+              </div>
+            </div>
           </div>
           <!-- /Contenuto chat -->
           <!-- Inserimento testo -->
@@ -264,20 +276,38 @@
               <i class="far fa-smile color_grey"></i>
             </div>
             <div class="insert_text">
-              <input type="text" name="Scrivi qualcosa" value="">
+              <input class="writing-text" type="text" placeholder="Scrivi qualcosa">
             </div>
-            <div class="microphone h_50">
-              <i class="fas fa-microphone color_grey"></i>
-              <i class="fas fa-paper-plane none"></i>
+            <div class="microphone h_50 send">
+              <i class="fas fa-microphone color_grey none"></i>
+              <i class="fas fa-paper-plane color_grey"></i>
             </div>
-
           </div>
           <!-- /Inserimento testo -->
-
         </div>
 
       </div>
     </div>
+<!-- templates -->
+<div class="templates none">
+
+  <div class="chat-wrapper sent">
+    <div class="my-message radius">
+      <div class="message-text">
+        <p></p>
+        <i class="fas fa-angle-down color_grey none"></i>
+      </div>
+      <div class="message-time">
+        <p class="color_grey"></p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- /templates -->
+
     <!--/ Wrapper con sfondo -->
+    <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
