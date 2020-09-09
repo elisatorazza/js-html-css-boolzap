@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+//Al click su send, il messaggio viene inviato e compare una risposta automatica dopo 1 secondo
 $(".send").click(
   function () {
     sendMessage();
@@ -9,7 +9,7 @@ $(".send").click(
     reply();
   }
 );
-
+//Rilasciando il tasto invio, il messaggio viene inviato e compare una risposta automatica dopo 1 secondo
 $(".writing-text").keyup(
   function(event) {
   if (event.which == 13) {
@@ -22,6 +22,21 @@ $(".writing-text").keyup(
     reply();
   }
 });
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+$("#search").keydown(function() {
+  var startSearch = $("#search").val(); //Prendo il valore inserito nell'input di ricerca e lo salvo in una variabile
+  $(".small-wrapper h4").each(function(){ //Seleziono tutti gli elementi h4
+    if ($(this).includes(startSearch)) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  })
+})
+//Creare funzione di controllo
+
+
+
 //Funzione da richiamare per l'invio di un messaggio
 function sendMessage(){
   //clono il p in cui è contenuto il messaggio//
@@ -59,6 +74,6 @@ function getCurrentHour () {
   var time = hours + ":" + minutes; //Creiamo la variabile dei minuti, sempre a partire dalla data
   return time;
 }
-
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 });
