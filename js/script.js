@@ -16,6 +16,12 @@ $(".writing-text").keyup(
     sendMessage();
   }
 });
+$(".writing-text").keyup(
+  function(event) {
+  if (event.which == 13) {
+    reply();
+  }
+});
 //Funzione da richiamare per l'invio di un messaggio
 function sendMessage(){
   //clono il p in cui è contenuto il messaggio//
