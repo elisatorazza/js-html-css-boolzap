@@ -23,25 +23,19 @@ $(".writing-text").keyup(
   }
 });
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
-$("#search").keyup(function() {
+$("#search").keyup(function() { //Evento di premere e lasciar andare il tasto
   var startSearch = $("#search").val(); //Prendo il valore inserito nell'input di ricerca e lo salvo in una variabile
-  console.log(startSearch)
-  var arrayName = $('.small-wrapper h4').map(function(){ //Creo un arrai dei nomi inseriti
-    return $(this).text()
-  });
-  console.log (arrayName);
-  arrayName.each(function() {
-    if ($(this).includes(startSearch)) {
-      this.show()
+  console.log(startSearch);
+  // var arrayName = .map(function(){ //Creo un arrai dei nomi inseriti
+  //   return $(this).text(); //Restituisce il testo contenuto nella variabile salvata
+  // });
+  // console.log (arrayName);
+  var nomeUtente = $('.small-wrapper h4');
+  nomeUtente.text().each(function() {
+    if (nomeUtente.includes(startSearch)) {
+      this.show();
     }
   })
-  // $(".small-wrapper h4").each(function(){ //Seleziono tutti gli elementi h4
-  //   // if ($(this).includes(startSearch)) {
-  //   //   $(this).show();
-  //   // } else {
-  //   //   $(this).hide();
-  //   // }
-  // })
 })
 //Creare funzione di controllo
 
@@ -84,6 +78,5 @@ function getCurrentHour () {
   var time = hours + ":" + minutes; //Creiamo la variabile dei minuti, sempre a partire dalla data
   return time;
 }
-// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 });
