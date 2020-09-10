@@ -27,11 +27,11 @@ $("#search").keyup(function() { //Evento di premere e lasciar andare il tasto
   var startSearch = $("#search").val(); //Prendo il valore inserito nell'input di ricerca e lo salvo in una variabile
   var nomeUtente = $('.small-wrapper h4').text(); //Prendo il testo contenuto nell'elemento .small-wrapper h4 e lo salvo
   console.log(nomeUtente);
-  nomeUtente.each([
+  nomeUtente.each({
     if (nomeUtente.includes(startSearch)) {
       $(this).parent().show();
     }
-  ]);
+  });
 });
 //Creare funzione di controllo
 
