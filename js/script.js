@@ -25,11 +25,12 @@ $(".writing-text").keyup(
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 $("#search").keyup(function() { //Evento di premere e lasciar andare il tasto
   var startSearch = $("#search").val(); //Prendo il valore inserito nell'input di ricerca e lo salvo in una variabile
-  var nomeUtente = $('.small-wrapper h4').text(); //Prendo il testo contenuto nell'elemento .small-wrapper h4 e lo salvo
-  console.log(nomeUtente);
-  nomeUtente.each(function(){
+  $(".small-wrapper").each(function(){
+    var nomeUtente = $(this).find("h4").text().toLowerCase();  //Prendo il testo contenuto nell'elemento .small-wrapper h4 e lo salvo
     if (nomeUtente.includes(startSearch)) {
       $(this).parent().show();
+    } else {
+      $(this).parent().hide();
     }
   });
 });
