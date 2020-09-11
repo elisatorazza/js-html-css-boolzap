@@ -1,5 +1,4 @@
 $(document).ready(function() {
-//Al click su send, il messaggio viene inviato e compare una risposta automatica dopo 1 secondo//
 $(".send").click(
   function () {
     sendMessage();
@@ -34,7 +33,7 @@ $("#search").keyup(function() { //Evento di premere e lasciar andare il tasto
     }
   });
 });
-//Creare funzione di controllo
+// Click sul contatto mostra la conversazione del contatto cliccato, è possibile inserire nuovi messaggi per ogni conversazione
 
 
 
@@ -76,4 +75,15 @@ function getCurrentHour () {
   return time;
 }
 
+//Funzione per associare chat a personal
+$("li.person").click(function () {
+  $(this).addClass("grey");
+
+
+  var currentPerson = $(this).attr("data-contatto"); //Prendo l'attributo di data contatto e lo salvo in una variabile
+  console.log(currentPerson);
+  $(".single-chat").addClass("none");
+  $(".single-chat[data-conversazione = "+currentPerson+"]").removeClass("none");
+
 });
+})
