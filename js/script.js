@@ -75,13 +75,18 @@ function getCurrentHour () {
   return time;
 }
 
-//Funzione per associare chat a personal
+//Funzione per associare chat a persona
 $("li.person").click(function () {
   $("li.person").not(this).removeClass("grey");
   $(this).addClass("grey");
   var currentPerson = $(this).attr("data-contatto"); //Prendo l'attributo di data contatto e lo salvo in una variabile
   $(".single-chat").addClass("none"); //Aggiungo display none a
   $(".single-chat[data-conversazione = "+currentPerson+"]").removeClass("none");
-
+  var name = $(this).find("h4").text(); //Salvo il nome dell'utente su cui ho cliccato
+  $(".col-right .small-wrapper h4").text(name); //Sostituisco il nome dell'utente su cui ho cliccato
+  var immagineUtente =$(this).find("img").attr("src");
+  console.log(immagineUtente);
+  $(".col-right img").attr("src", immagineUtente);
   });
+
 })
