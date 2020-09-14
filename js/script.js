@@ -33,9 +33,6 @@ $("#search").keyup(function() { //Evento di premere e lasciar andare il tasto
     }
   });
 });
-// Click sul contatto mostra la conversazione del contatto cliccato, è possibile inserire nuovi messaggi per ogni conversazione
-
-
 
 //Funzione da richiamare per l'invio di un messaggio
 function sendMessage(){
@@ -48,20 +45,27 @@ function sendMessage(){
     var currentHour = getCurrentHour();
     newText.find(".message-time p").text(currentHour); //Qua invece inseriamo l'orario
     newText.addClass("sent"); //Aggiugno la classe sent per visualizzarlo a dx con sfondo dx
-    $(".single-chat").append(newText);
+    $(".single-chat.block").append(newText);
     $(".writing-text").val("");
+    var scrollHeight = $(".single-chat.block").prop("scrollHeight");
+    $(".single-chat.block").scrollTop(scrollHeight);
   }
 }
 // Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 function reply() {
+  var textHtml = $(".profile .small-wrapper p").text();
+  var replyWindow = $(".single-chat.block");
   setTimeout(function(){
     var newText = $(".templates .chat-wrapper").clone();
-    newText.find(".message-text p").text("Ok");
     var currentHour = getCurrentHour();
+    newText.find(".message-text p").text("Ok");
     newText.find(".message-time p").text(currentHour); //Qua invece inseriamo l'orario
-    $(".single-chat").append(newText);
+    replyWindow.append(newText);
+    var scrollHeight = $(".single-chat.block").prop("scrollHeight");
+    replyWindow.scrollTop(scrollHeight);
+    $(".profile .small-wrapper p").text(textHtml);
   }, 1000); //La funzione scatta con un ritardo di 2 secondi
-
+  $(".profile .small-wrapper p").text("Sta scrivendo...");
 }
 //Funzione in cui salviamo l'ora corrente.
 function getCurrentHour () {
@@ -80,12 +84,14 @@ $("li.person").click(function () {
   $("li.person").not(this).removeClass("grey");
   $(this).addClass("grey");
   var currentPerson = $(this).attr("data-contatto"); //Prendo l'attributo di data contatto e lo salvo in una variabile
-  $(".single-chat").addClass("none"); //Aggiungo display none a
-  $(".single-chat[data-conversazione = "+currentPerson+"]").removeClass("none");
+  $(".single-chat").removeClass("block"); //Aggiungo display none a
+  $(".single-chat[data-conversazione = "+currentPerson+"]").addClass("block");
   var name = $(this).find("h4").text(); //Salvo il nome dell'utente su cui ho cliccato
   $(".col-right .small-wrapper h4").text(name); //Sostituisco il nome dell'utente su cui ho cliccato
   var immagineUtente =$(this).find("img").attr("src");
   $(".col-right img").attr("src", immagineUtente);
+  var time = $(this).find(".time p").text();
+  $(".col-right .small-wrapper p time").text(time);
 });
 // Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
 $(".col-right").on("click", ".message-text i", function (){

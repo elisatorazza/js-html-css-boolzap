@@ -7,9 +7,6 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
-.block {
-  display: block;
-}
 .in_bl {
   display: inline-block;
 }
@@ -206,6 +203,7 @@ margin-left:auto;
   background-image: url(../img/mine.jpg);
   overflow-y: scroll;
   padding: 50px;
+  display: none;
 }
 .chat-wrapper {
   margin: 10px 0;
@@ -251,6 +249,9 @@ margin-left:auto;
 .menu-cancel li {
   list-style: none;
 }
+.block {
+  display: block;
+}
 /* /Contenuto chat in corso: nome, img, accesso */
 /* Inserimento testo */
 .text {
@@ -274,7 +275,7 @@ margin-left:auto;
 }
 .delete {
   cursor: pointer;
-  
+
 }
 /* /Inserimento testo */
 .microphone {
