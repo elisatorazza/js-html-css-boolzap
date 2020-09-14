@@ -23,7 +23,7 @@ $(".writing-text").keyup(
 });
 // Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 $("#search").keyup(function() { //Evento di premere e lasciar andare il tasto
-  var startSearch = $("#search").val(); //Prendo il valore inserito nell'input di ricerca e lo salvo in una variabile
+  var startSearch = $("#search").val().toLowerCase(); //Prendo il valore inserito nell'input di ricerca e lo salvo in una variabile
   $(".small-wrapper").each(function(){
     var nomeUtente = $(this).find("h4").text().toLowerCase();  //Prendo il testo contenuto nell'elemento .small-wrapper h4 e lo salvo
     if (nomeUtente.includes(startSearch)) {
@@ -75,7 +75,7 @@ function getCurrentHour () {
   return time;
 }
 
-//Funzione per associare chat a persona
+//Associare chat a persona e cambio immagine/nome
 $("li.person").click(function () {
   $("li.person").not(this).removeClass("grey");
   $(this).addClass("grey");
@@ -85,8 +85,13 @@ $("li.person").click(function () {
   var name = $(this).find("h4").text(); //Salvo il nome dell'utente su cui ho cliccato
   $(".col-right .small-wrapper h4").text(name); //Sostituisco il nome dell'utente su cui ho cliccato
   var immagineUtente =$(this).find("img").attr("src");
-  console.log(immagineUtente);
   $(".col-right img").attr("src", immagineUtente);
-  });
-
+});
+// Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+$(".col-right").on("click", ".message-text i", function (){
+  $(this).parent().siblings(".menu-cancel").toggleClass("none");
+});
+$(".col-right").on("click", ".menu-cancel .delete", function(){
+  $(this).parents(".chat-wrapper").remove();
+});
 })

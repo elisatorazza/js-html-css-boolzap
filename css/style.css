@@ -234,9 +234,22 @@ margin-left:auto;
 }
 .my-message .message-text {
     padding: 15px;
+    position: relative;
 }
 .my-message .message-time p {
   font-size: 12px;
+}
+.my-message i {
+  position: absolute;
+  top:0;
+  right:0;
+  padding-left: 10px;
+}
+.meu-cancel {
+  white-space: nowrap;
+}
+.menu-cancel li {
+  list-style: none;
 }
 /* /Contenuto chat in corso: nome, img, accesso */
 /* Inserimento testo */
@@ -258,6 +271,10 @@ margin-left:auto;
 }
 .text i {
   font-size: 24px;
+}
+.delete {
+  cursor: pointer;
+  
 }
 /* /Inserimento testo */
 .microphone {
